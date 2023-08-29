@@ -26,7 +26,7 @@ function displayFooter() {
 }
 
 // Codigo DOM #1
-
+g
 // Codigo DOM #2
 
 // Codigo DOM #3
