@@ -21,9 +21,9 @@ button {
 }
 
 body {
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 14px 'Times New Roman', Helvetica, Arial, sans-serif;
   line-height: 1.4em;
-  background: #f5f5f5;
+  background: #646464;
   color: #111111;
   min-width: 230px;
   max-width: 550px;
@@ -38,7 +38,7 @@ body {
 }
 
 .todoApp {
-  background: #fff;
+  background: #ffffff;
   margin: 130px 0 40px 0;
   position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
@@ -69,7 +69,7 @@ body {
   font-size: 80px;
   font-weight: 200;
   text-align: center;
-  color: #b83f45;
+  color: #0995f9;
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
