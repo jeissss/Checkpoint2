@@ -80,6 +80,8 @@ document.querySelector('.new-todo').addEventListener('keyup', (event) => {
 });
 
 
+
+
 // Codigo DOM #2
 // este fragmento permite conservar el estado del checkbox (true o false) en el localStorage
 
