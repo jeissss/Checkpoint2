@@ -1,6 +1,6 @@
 /*TIPS: *No olvides utilizar el almacenamiento local (localStorage)
  para que las tareas queden guardadas en caso
- de que la aplicación se cierre.*/
+ de que la aplicación se cierre.*/ //!
 let itemsArray = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")): []
 
  function crearTarea(nombreTarea){
