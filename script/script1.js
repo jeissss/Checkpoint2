@@ -4,7 +4,6 @@
 
  let itemsArray = localStorage.getItem("items")? JSON.parse(localStorage.getItem("items")): []
 
- 
  function borrarTarea(posicion){
   itemsArray.splice(posicion,1);
   localStorage.setItem("items",JSON.stringify(itemsArray));
@@ -17,7 +16,15 @@
   location.reload();
  }
  
- 
+ function countPend(){
+
+  let ContadorPendientes = itemsArray.filter ((tarea) => tarea.checked === false );
+
+  localStorage.setItem("items",JSON.stringify(itemsArray));
+  // location.reload();
+
+  return ContadorPendientes.length;
+};
  
  
 
@@ -46,22 +53,6 @@ function displayFooter() {
   document.querySelector('.footer').innerHTML = page
 }
 
-// Codigo DOM #1
-document.querySelector('.new-todo').addEventListener('keyup', (event) => {
-  if (
-    event.keyCode === 13 &&
-    document.querySelector('.new-todo').value.length > 0
-  ) {
-    const item = document.querySelector('.new-todo')
-    //Llamar la función que crea la tarea.**
-CrearTareas(item.value)      
-    }
-  }
-);
-
-
-
-// Codigo DOM #2
 
 // Codigo DOM #3
 function activateDeleteListeners() {
@@ -119,6 +110,36 @@ localStorage.setItem("items",JSON.stringify(itemsArray));
     localStorage.setItem('items', JSON.stringify(itemsArray))
   })*/
 
+}
+// Codigo DOM #5
+// Permite que la acción guardar el nuevo nombre de la tarea cuando decides editar y que impacte el DOM del HTML, acá debes agegar algoritmo de actualizar tarea
+
+function activateSaveListeners() {
+  const saveBtn = document.querySelectorAll('.saveBtn')
+  const inputs = document.querySelectorAll('.input-controller textarea')
+  saveBtn.forEach((sB, i) => {
+    sB.addEventListener('click', () => {
+      // Llamar la función que guarda la actualización la tarea
+      Actualizartarea(input [i].value, i);
+    })
+  })
+}
+
+// Codigo DOM #6
+// Esta es la lógica para el botón "cancelar" cuando presionas editar una tarea, inserta este código tal cual, el reto está en saber en qué parte de tu código debes usarlo.
+
+function activateCancelListeners() {
+  const cancelBtn = document.querySelectorAll('.cancelBtn')
+  const updateController = document.querySelectorAll('.update-controller')
+  const inputs = document.querySelectorAll('.input-controller textarea')
+  cancelBtn.forEach((cB, i) => {
+    cB.addEventListener('click', () => {
+      updateController[i].style.display = 'none'
+      inputs[i].disabled = true
+      inputs[i].style.border = 'none'
+      // location.reload()
+    })
+  });
 }
 
 function displayItems() {
@@ -188,6 +209,7 @@ function displayItems() {
   activateSaveListeners()
   activateCancelListeners()
 }
+
 
 //El sistema debe permitir EDITAR o MODIFICAR una tarea.
 
